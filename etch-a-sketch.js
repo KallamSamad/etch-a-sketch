@@ -22,5 +22,11 @@ for (let gridNum=0;  gridNum < 16*16; gridNum++){
     gridElement.style.width = "16px"
     gridElement.style.border ="2px solid black"
     gridElement.textContent = "a"
+    gridElement.classList.add("cell")
+    gridElement.onmouseover = function(){
+        this.style.backgroundColor = "blue"; };
     grid.appendChild(gridElement)
 }
+ 
+
+ 
