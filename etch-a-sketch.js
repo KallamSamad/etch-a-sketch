@@ -6,6 +6,14 @@ container.style.width ="355px"
 container.classList.add("container")
 document.body.appendChild(container)
 
+const grid =document.createElement("div")
+grid.style.backgroundColor = "red"
+grid.textContent =""
+grid.style.gap = "1px"; 
+grid.style.width ="355px"
+grid.classList.add("grid")
+container.appendChild(grid)
+
 
 
 for (let gridNum=0;  gridNum < 16*16; gridNum++){
@@ -14,5 +22,5 @@ for (let gridNum=0;  gridNum < 16*16; gridNum++){
     gridElement.style.width = "16px"
     gridElement.style.border ="2px solid black"
     gridElement.textContent = "a"
-    container.appendChild(gridElement)
+    grid.appendChild(gridElement)
 }
