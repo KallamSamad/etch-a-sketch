@@ -1,15 +1,14 @@
 const container=document.createElement("div")
 container.style.backgroundColor = "red"
-container.textContent ="Dummy text"
-container.style.display = "grid";
-container.style.gridTemplateColumns = "repeat(16, 20px)";
-container.style.gridTemplateRows = "repeat(16, 20px)";
+container.textContent =""
 container.style.gap = "1px"; 
+container.style.width ="355px"
+container.classList.add("container")
 document.body.appendChild(container)
 
 
 
-for (let gridNum=0;  gridNum <=256; gridNum++){
+for (let gridNum=0;  gridNum < 16*16; gridNum++){
     const gridElement = document.createElement("div")
     gridElement.style.height = "16px"
     gridElement.style.width = "16px"
