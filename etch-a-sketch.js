@@ -16,22 +16,33 @@ container.appendChild(grid)
 
 
 
-for (let gridNum=0;  gridNum < 16*16; gridNum++){
-    const gridElement = document.createElement("div")
-    gridElement.style.height = "16px"
-    gridElement.style.width = "16px"
-    gridElement.style.border ="2px solid black"
-    gridElement.textContent = " "
-    gridElement.classList.add("cell")
-    gridElement.onmouseover = function(){
+function etch(cellVal){
+        for (let gridNum=0;  gridNum < cellVal; gridNum++){
+        const gridElement = document.createElement("div")
+        gridElement.style.border ="2px solid black"
+        gridElement.style.width = "16px"
+        gridElement.style.height ="16px"
+        gridElement.textContent = " "
+        gridElement.classList.add("cell")
+        gridElement.onmouseover = function(){
         this.style.backgroundColor = "blue"; };
-    grid.appendChild(gridElement)
+        grid.appendChild(gridElement)
+    }
 }
- 
+
+etch(256)
 const btn = document.createElement("button")
 btn.textContent = "Refresh"
 btn.onclick = function(){
-    alert("dummy")
+   const gridSize=Number(prompt("Enter new grid dimenstions within the range 0-100"))
+   if (gridSize>0 && gridSize<=100){
+    grid.innerHTML =""
+    etch(gridSize**2)
+   }
+   else{
+    alert("invalid value, enter dimension from range 0-100")
+   }
+
 
 }
 container.appendChild(btn)
